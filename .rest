@@ -1,0 +1,8 @@
+###
+GET http://localhost:3000/code
+
+###
+GET http://localhost:3000/short-url?url=https://www.baidu.com
+
+###
+GET http://localhost:3000/kT5jZx

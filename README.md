@@ -7,6 +7,8 @@
 - base64 vs base62
 - encoding converts numbers to ASCII strings (0-9, a-z and A-Z)
 - UTF8MB4 是一种用于存储和处理 Unicode 字符的字符集，它是 MySQL 和 MariaDB 数据库中对 UTF-8 编码的扩展实现。UTF8MB4 是为了更好地支持 Unicode 的全部字符范围，尤其是那些需要 4 个字节表示的字符（如表情符号、一些罕见的汉字等）
+- shortCode (code、 used)
+- shortLongMap (shortCode、 longUrl、 createTime)
 
 ## 重定向区分
 301 是永久重定向，就是重定向一次之后，下次浏览器就不会再访问短链，会直接访问长链接。
