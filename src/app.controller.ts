@@ -30,13 +30,13 @@ export class AppController {
 
   @Get('/short-url')
   shortUrl(@Query('url') url: string) {
-    return this.shortLongMapService.generate(url);
+    return this.shortLongMapService.longUrl2code(url);
   }
 
   @Get(':code')
   @Redirect()
   async jump(@Param('code') code: string) {
-    const url = await this.shortLongMapService.getLongUrl(code);
+    const url = await this.shortLongMapService.code2longUrl(code);
     console.log(url, 123);
     if (!url) {
       throw new BadRequestException('短链接不存在');

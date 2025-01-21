@@ -11,7 +11,8 @@ export class ShortLongMapService {
   @InjectEntityManager()
   private readonly entityManager: EntityManager;
 
-  async generate(url: string) {
+  // long url 转 short code
+  async longUrl2code(url: string) {
     const shortCodeEntity = await this.shortCodeService.getRandomCode();
     const codeMap = new ShortLongMap();
     codeMap.shortCode = shortCodeEntity.code;
@@ -21,7 +22,7 @@ export class ShortLongMapService {
     return shortCodeEntity.code;
   }
 
-  async getLongUrl(shortCode: string) {
+  async code2longUrl(shortCode: string) {
     const entity = await this.entityManager.findOneBy(ShortLongMap, {
       shortCode,
     });

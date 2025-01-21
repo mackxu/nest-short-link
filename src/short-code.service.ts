@@ -26,6 +26,7 @@ export class ShortCodeService {
     return this.generateCode();
   }
 
+  // 获取新的code entity
   async getRandomCode() {
     const entity = await this.entityManager.findOneBy(ShortCode, {
       used: false,
@@ -36,6 +37,7 @@ export class ShortCodeService {
     return this.generateCode();
   }
 
+  // 更新code的使用状态
   updateUsedById(id: number) {
     return this.entityManager.update(ShortCode, { id }, { used: true });
   }

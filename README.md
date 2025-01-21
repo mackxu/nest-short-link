@@ -21,3 +21,15 @@
 base64 就是 26 个大写字母、26 个小写字母、10 个数字、2 个特殊字符，一共 64 个字符。
 
 base62 是去掉了两个特殊字符，一共 62 个字符。
+
+## 实现
+
+### ShortCodeService
+- generateRandomStr() 生成随机字符串辅助函数
+- generateCode() 生成新的code 插入数据库
+- getRandomCode() 获取新的code entity
+- updateUsedById() 更新code的使用状态
+
+### ShortLongMapService
+- longUrl2code() 创建长链与code的映射
+- code2longUrl() 通过code获取长链
